@@ -1,7 +1,7 @@
 # Project Report: GrammarGuard Chrome Extension
 
-**Student Name:** Yuvraj Sachdeva
-**Date:** January 20, 2026
+**Student Name:** Yuvraj Sachdeva <br>
+**Date:** January 20, 2026 <br>
 **Project Type:** Chrome Extension (Manifest V3)
 
 ---
