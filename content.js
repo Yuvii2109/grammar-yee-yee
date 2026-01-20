@@ -101,21 +101,27 @@ function showSuggestions(targetElement, matches) {
 
     // Click handler to fix the text
     item.addEventListener('click', () => {
-      const newValue = targetElement.value.replace(wrongText, suggestion);
+      // 1. ADVANCED FIX: Use offsets instead of blind replace
+      // This ensures we replace the EXACT word intended, not the first matching letter found elsewhere
+      const currentVal = targetElement.value;
+      const start = match.offset;
+      const end = match.offset + match.length;
       
-      // 1. Update the value
+      // Reconstruct the string: [Before Error] + [Suggestion] + [After Error]
+      const newValue = currentVal.substring(0, start) + suggestion + currentVal.substring(end);
+      
       targetElement.value = newValue;
       
-      // 2. CRITICAL FIX: Tell the website the value changed
-      // This tricks Google/React into updating their internal state
-      const event = new Event('input', { bubbles: true });
-      targetElement.dispatchEvent(event);
+      // 2. Dispatch event to trick Google/React (The "Ghost" Fix)
+      targetElement.dispatchEvent(new Event('input', { bubbles: true }));
       
-      // 3. Cleanup UI
-      item.remove();
-      if (box.querySelectorAll('.gg-error-item').length === 0) {
-        box.remove();
-      }
+      // 3. CRITICAL: Remove the WHOLE box. 
+      // Since we changed the text length, old error positions are now wrong.
+      box.remove();
+
+      // 4. Automatically re-check immediately to find remaining errors
+      // This will make the box pop back up with the correct next error
+      handleGrammarCheck(targetElement);
     });
 
     box.appendChild(item);
