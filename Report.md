@@ -8,7 +8,7 @@
 
 ## 1. Project Overview
 
-**GrammarGuard** is a browser extension designed to enhance user writing by providing real-time grammar and spelling corrections within web-based text fields. Operating similarly to Grammarly, it utilizes the LanguageTool API to analyze text and offers immediate feedback via a custom UI overlay.
+**GrammarYeeYee** is a browser extension designed to enhance user writing by providing real-time grammar and spelling corrections within web-based text fields. Operating similarly to Grammarly, it utilizes the LanguageTool API to analyze text and offers immediate feedback via a custom UI overlay.
 
 The goal was to build a lightweight, non-intrusive tool that demonstrates proficiency in DOM manipulation, asynchronous API handling, and the Chrome Extension architecture.
 
