@@ -1,4 +1,4 @@
-# Project Report: GrammarGuard Chrome Extension
+# Project Report: GrammarYeeYee Chrome Extension
 
 **Student Name:** Yuvraj Sachdeva <br>
 **Date:** January 20, 2026 <br>
