@@ -1,0 +1,66 @@
+/* Container for the suggestions */
+.gg-suggestion-box {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  margin-top: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  max-width: 100%;
+  width: 400px; /* Fixed width for consistency */
+  z-index: 10000;
+  position: relative;
+  border-left: 4px solid #ef4444; /* Red stripe for attention */
+}
+
+/* Header text */
+.gg-header {
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 4px;
+}
+
+/* Individual error row */
+.gg-error-item {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.gg-error-item:last-child {
+  border-bottom: none;
+}
+
+.gg-error-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Styling for the wrong word */
+.gg-wrong {
+  text-decoration: line-through;
+  color: #dc2626; /* Red */
+  font-weight: 500;
+}
+
+/* Styling for the suggestion */
+.gg-correct {
+  color: #16a34a; /* Green */
+  font-weight: 700;
+  background-color: #dcfce7;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+/* Error description message */
+.gg-msg {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+  font-style: italic;
+}
