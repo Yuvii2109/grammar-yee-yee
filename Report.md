@@ -41,7 +41,7 @@ To ensure a robust user experience, two critical optimization algorithms were im
 ### 1. Debouncing (Rate Limiting)
 
 **Challenge:** Sending an API request for every keystroke would flood the API, causing rate-limit errors (429) and slowing down the browser.
-**Solution:** I implemented a `setTimeout` logic. The extension waits for the user to *stop* typing for **1.5 seconds** before triggering the check. If the user types again within that window, the timer resets.
+**Solution:** I implemented a `setTimeout` logic. The extension waits for the user to *stop* typing for **2.5 seconds** before triggering the check. If the user types again within that window, the timer resets.
 
 ### 2. Caching Strategy
 
@@ -74,7 +74,7 @@ The User Interface was designed to be minimal but informative:
     </tr>
     <tr>
       <td style="font-weight: bold">API Rate Limits</td>
-      <td>The public API allows limited requests. I increased the debounce time to 1.5s and added caching to minimize hits.</td>
+      <td>The public API allows limited requests. I increased the debounce time to 2.5s and added caching to minimize hits.</td>
     </tr>
     <tr>
       <td style="font-weight: bold">Dynamic Elements</td>
