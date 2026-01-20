@@ -94,3 +94,7 @@ If this project were to be expanded, the following features would be prioritized
 
 - **Chrome Extension Documentation:** https://developer.chrome.com/docs/extensions/mv3/
 - **LanguageTool API:** https://languagetool.org/http-api/swagger-ui/
+
+## 8. How would it look like?
+
+![GrammarYeeYee.png](https://drive.google.com/uc?export=view&id=14-oJkAbZxGfuzCw8p9O-iDPbnTrosgRq)
