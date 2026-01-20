@@ -101,14 +101,18 @@ function showSuggestions(targetElement, matches) {
 
     // Click handler to fix the text
     item.addEventListener('click', () => {
-      // Simple string replace (Note: This replaces the FIRST occurrence. 
-      // For production, you'd use the offset index for precision)
-      targetElement.value = targetElement.value.replace(wrongText, suggestion);
+      const newValue = targetElement.value.replace(wrongText, suggestion);
       
-      // Remove this error item from the list
+      // 1. Update the value
+      targetElement.value = newValue;
+      
+      // 2. CRITICAL FIX: Tell the website the value changed
+      // This tricks Google/React into updating their internal state
+      const event = new Event('input', { bubbles: true });
+      targetElement.dispatchEvent(event);
+      
+      // 3. Cleanup UI
       item.remove();
-      
-      // If list is empty, remove the whole box
       if (box.querySelectorAll('.gg-error-item').length === 0) {
         box.remove();
       }
